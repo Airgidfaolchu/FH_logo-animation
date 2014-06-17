@@ -1,0 +1,165 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FeedHenry Logo Animation</title>
+<style>
+body { background-color: #333;}
+.stage
+{
+	perspective: 2000px;
+	-webkit-perspective: 2000px;
+    transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+}
+
+.stage2
+{
+    transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform:  translateZ(50px);
+	-webkit-transform:  translateZ(50px);
+    -ms-transform:  translateZ(50px);
+    text-align: center;
+}
+.cube
+{
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 300px;
+	height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -ms-transform-origin: center;
+    -o-transform-origin: center;
+    transform-origin: center;
+	-webkit-animation: rotate-cube 120s linear infinite;
+	animation: rotate-cube 120s linear infinite;
+}
+
+.cubeface
+{
+    background-color: white;
+    background-image: url(fh_logo.png);
+	position: absolute;
+	transition: all 600ms;
+	-webkit-transition: all 600ms;
+	top: 15px;
+	left: 15px;
+	width:200px;
+	height:200px;
+	opacity:1;
+}
+
+#homeText
+{
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    opacity: 0;
+    text-decoration: none;
+}
+
+#homeLink
+{
+    text-decoration: none;
+}
+
+@keyframes rotate-cube
+{
+	from
+	{
+        transform: rotateZ(0Deg) rotateY(0Deg);
+	}
+	to
+	{
+		transform: rotateZ(2700Deg) rotateY(360Deg);
+	}
+}
+
+@-webkit-keyframes rotate-cube
+{
+	from
+	{
+        -webkit-transform: rotateZ(0Deg) rotateY(0Deg);
+	}
+	to
+	{
+		-webkit-transform: rotateZ(270Deg) rotateY(360Deg);
+	}
+}
+
+#sqaure_1   { transform: translateZ(100px); }
+#sqaure_2    { transform: translateX(100px) rotateY(90Deg); }
+#sqaure_3     { transform: translateX(-100px) rotateY(-90Deg); }
+#sqaure_4      { transform: translateZ(-100px); }
+#sqaure_5 { transform: translateY(100px) rotateX(90Deg); }
+#sqaure_6     { transform: translateY(-100px) rotateX(-90Deg); }
+
+:hover > #sqaure_1   { transform: translateZ(250px); opacity: 0.4;}
+:hover > #sqaure_2    { transform: translateX(250px) rotateY(90Deg); opacity: 0.4;}
+:hover > #sqaure_3     { transform: translateX(-250px) rotateY(-90Deg); opacity: 0.4;}
+:hover > #sqaure_4      { transform: translateZ(-250px); opacity: 0.4;}
+:hover > #sqaure_5 { transform: translateY(250px) rotateX(90Deg); opacity: 0.4;}
+:hover > #sqaure_6     { transform: translateY(-250px) rotateX(-90Deg);  opacity: 0.4;}
+:hover > #homeText     { opacity: 1; }
+
+#sqaure_1   { -webkit-transform: translateZ(100px); }
+#sqaure_2    { -webkit-transform: translateX(100px) rotateY(90Deg); }
+#sqaure_3     { -webkit-transform: translateX(-100px) rotateY(-90Deg); }
+#sqaure_4      { -webkit-transform: translateZ(-100px); }
+#sqaure_5 { -webkit-transform: translateY(100px) rotateX(90Deg); }
+#sqaure_6     { -webkit-transform: translateY(-100px) rotateX(-90Deg); }
+
+:hover > #sqaure_1   { -webkit-transform: translateZ(250px); }
+:hover > #sqaure_2    { -webkit-transform: translateX(250px) rotateY(90Deg); }
+:hover > #sqaure_3     { -webkit-transform: translateX(-250px) rotateY(-90Deg); }
+:hover > #sqaure_4      { -webkit-transform: translateZ(-250px); }
+:hover > #sqaure_5 { -webkit-transform: translateY(250px) rotateX(90Deg); }
+:hover > #sqaure_6     { -webkit-transform: translateY(-250px) rotateX(-90Deg); }
+
+.screen-centered
+{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+
+</style>
+
+</head>
+
+<body>
+	
+   <div class="stage screen-centered">
+        <div class="stage2">
+            <a href="http://feedhenry.com" id="homeLink">
+                <p id="homeText">HOME</p>
+        <div class=" cube">
+            <img class="cubeface" id="sqaure_1"/>
+            <img class="cubeface" id="sqaure_2" />
+            <img class="cubeface" id="sqaure_3"  />
+            <img class="cubeface" id="sqaure_4" />
+            <img class="cubeface" id="sqaure_5" />
+            <img class="cubeface" id="sqaure_6" />
+        </div>
+            </a>
+        </div>
+    </div>
+	
+</body>
+</html>
